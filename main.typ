@@ -1,24 +1,51 @@
-#import "./layout/resume.typ": *
+#import "./layout/utils.typ": *
 
 #let name = "Wolf Mermelstein"
 #let phone = "(212)767-WOLF"
 #let email = "wolf@404wolf.com"
-#let github = "404Wolf"
-#let linkedin = "wolfmermelstein"
+#let github = "github.com/404Wolf"
+#let linkedin = "linkedin.com/in/wolfmermelstein"
 #let personal-site = "404wolf.com"
 
-// Custom link function with blue color
-#let chref(url, text) = link(url)[#text]
+#let author-name = "Wolf Mermelstein"
 
-#show: resume.with(
-  top-margin: 0.45in, personal-info-font-size: 9.2pt, author-position: center, personal-info-position: center, author-name: name, phone: phone, email: email, website: personal-site, linkedin-user-id: linkedin, github-username: github,
+#set document(
+  title: "Résumé | " + author-name, author: author-name, keywords: "cv", date: none,
 )
 
-#custom-title(
+#show link: set text(fill: rgb("#0010c3"))
+
+#set par(leading: 0.4em)
+#set list(indent: 0.2em, spacing: 0.7em)
+
+#set page(
+  paper: "us-letter", margin: (top: 0.3in, bottom: 0.2in, left: 0.3in, right: 0.3in),
+)
+
+#set text(font: "New Computer Modern", size: 11pt, lang: "en", ligatures: false)
+
+#align(center, [
+  #text(25pt, weight: "extrabold")[#author-name]
+  #v(-1.6em)
+])
+
+#align(center)[
+  #text(9.2pt)[
+    #link("tel:" + phone)[#phone] |
+    #link("mailto:" + email)[#email] |
+    #link("https://" + personal-site)[#personal-site] |
+    #link("https://" + linkedin)[#linkedin] |
+    #link("https://" + github)[#github]
+  ]
+]
+
+#v(-0.8em)
+
+#category-title(
   "Education",
 )[
-  #education-heading(
-    "Case Western Reserve University", "Cleveland, OH", "B.S. Computer Science", "3.93 GPA", none, "Anticipated 2027",
+  #school-container(
+    "Case Western Reserve University", "Cleveland, OH", "B.S. Computer Science, 3.93 GPA", "September, 2023", "Anticipated 2027",
   )[
     - *Relevant courses:* Networks, Linux Tools & Scripting; Algo/Data Structures, OS,
       Persuasion
@@ -28,153 +55,109 @@
       Club VP
   ]
 
-  #education-heading(
-    "Bard Early College", "Queens, NY", "Associates of Arts", "4.00 GPA", datetime(year: 2021, month: 9), datetime(year: 2023, month: 6),
+  #school-container(
+    "Bard Early College", "Queens, NY", "Associates of Arts, 4.00 GPA", "September, 2021", "June, 2023",
   )[]
 ]
 
-#custom-title(
+#v(1.9em)
+
+#category-title(
   "Awards & Honors",
 )[
-  - HackCWRU (University Hackathon) First Place #align(right)[February 2024]
-  - Case Western ThinkBox Student Project Fund (\$630) #align(right)[October 2023]
-  - Bard High School Early College Departmental Nanoscience and Ancient Latin awards #align(right)[May 2023]
-  - Microsoft Bug Hunter Acknowledgment #align(right)[March 2022]
-  - Hackett Certificate for "greatest proficiency in oratory, either verse or prose" #align(right)[May 2022]
+  #awards-container(
+    (
+      ([HackCWRU (University Hackathon) First Place], "February 2024"), ([Case Western ThinkBox Student Project Fund (\$630)], "October 2023"), ([Microsoft Bug Hunter Acknowledgment], "March 2022"),
+    ),
+  )
 ]
 
-#custom-title(
+#v(0.3em)
+
+#category-title(
   "Experience",
 )[
-  #work-heading(
-    "Fullstack Software Engineer", "Val Town", "Internship", datetime(year: 2025, month: 5), "Present", "Brooklyn, New York, United States · On-site",
+  #job-container(
+    "Fullstack Software Engineer", "Val Town", "Easy, fun, & instant serverless Javascript functions.", "May 2025", "Present", "NYC",
   )[
-    Easy, fun, & instant serverless Javascript functions.
-
-    - Designed and wrote our CLI companion
-    - Integrated the Deno (typescript) language server into our codemirror web editor
-    - Helped architect and implement custom K8s load balancing system
-    - Worked on backend redesign to enable higher throughput with clustering, and
-      eventual WebSocket support
+    - Designed and wrote our #link("https://github.com/val-town/vt")[CLI companion].
+      Integrated the Deno (typescript) language server into our codemirror web editor
+      (#link("https://github.com/val-town/vtlsp")[lib]). Helped architect and
+      implement custom K8s load balancing system. Worked on backend redesign to enable
+      higher throughput with clustering, and eventual WebSocket support.
   ]
 
-  #work-heading(
-    "Participant", "Recurse Center", "Brooklyn-based self-led coding retreat", datetime(year: 2023, month: 6), datetime(year: 2024, month: 8), "NYC & Remote",
+  #job-container(
+    "Participant", "Recurse Center", "Brooklyn-based self-led coding retreat", "June 2023", "August 2024", "NYC & Remote",
   )[
-    - *Personal Website* (#link("https://404wolf.com")[site], #link("https://github.com/404wolf/404wolf.com")[code])
-      Designed website with TS/TSX, React, & tailwind. Implemented custom post editing
-      system with Postgres/Prisma-OR
-    & S3 to store/fetch/render posts (w/REST CRUD). Wrote (TS) backup and migration
-    scripts. Created special markdown parsing system with custom Rehype plugins.
-    Wrote Obsidian plugin to sync/edit blogs.
-
-    - *NixOS & Nix Builds*
+    - *NixOS / Nix Builds*
       Contributed to #link("https://github.com/NixOS/nixpkgs")[nixpkgs]. Configured
-      NixOS desktop system from scratch
-    w/Hyprland, home-manager, and other extensive customizations. Learned Nix
-    language/packaging binaries & various programs. Working on project to dockerize
-    Android emulators with Nix docker tools
-    #link("https://github.com/404Wolf/android-docker")[(code)].
-
+      NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive
+      customizations. Learned Nix language/packaging binaries & various programs.
+      Working on project to dockerize Android emulators with Nix docker tools #link("https://github.com/404Wolf/android-docker")[(code)].
     - *Generated Vocab Cards* #link("https://github.com/orgs/Logophilio/repositories")[(code)]
       Created Python Django server to merge Webster, OpenAI, and other API data into
-      elegant English Vocab flashcard
-    PDFs. Made system to generate vector art using template SVGs and Chrome Devtools
-    Protocol.
+      elegant English Vocab flashcard PDFs. Made system to generate vector art using
+      template SVGs and Chrome Devtools Protocol.
   ]
 
-  #work-heading(
-    "Co-founder; Solo Software Engineer; Sales Manager", "Minecraft Name Autoclaiming", "Online self-run business", datetime(year: 2021, month: 6), datetime(year: 2022, month: 7), "Remote",
+  #job-container(
+    "Co-founder; Solo Software Engineer; Sales Manager", "Minecraft Name Autoclaiming", "Online self-run business", "June 2021", "July 2022", "Remote",
   )[
     - *Software Engineer*
       Developed system w/Python to autoclaim desirable Minecraft usernames at moment
-      of release. Automated server
-    deployment and account distribution for 50-80 accounts. Implemented automatic
-    name queue, server-setup scripts, AioHT Swagger-Spec'ed management server, and
-    admin interface. Utilized Vultr API for server deployment and AsyncSSH for aut &
-    SFTP.
-
+      of release. Automated server deployment and account distribution for 50-80
+      accounts. Implemented automatic name queue, server-setup scripts, AioHTTP
+      Swagger-Spec'ed management server, and admin interface. Utilized Vultr API for
+      server deployment and AsyncSSH for automation & SFTP.
     - *Sales Management*
       Facilitated sales process and auctions for over 100 buyers, generating \$6,000+
-      in revenue with around 200 uniqu
-    accounts sold. Maintained consistently positive customer feedback and regular
-    reorders.
+      in revenue with around 200 unique accounts sold. Maintained consistently
+      positive customer feedback and regular reorders.
   ]
 ]
 
-#custom-title(
+#category-title(
   "Projects",
 )[
-  #project-heading(
-    "DNA Nanotube Designer Tool (\"NATuG\")",
+  #project-container(
+    (
+      ("blog", "https://404wolf.com/posts/project/DNANanotubes"), (
+        "demo", "https://wolf-mermelstein-personal-website.s3.us-east-2.amazonaws.com/programOverview_0001_0001_0001.webm",
+      ), ("code", "https://github.com/NATuG3/NATuG3"),
+    ), "DNA Nanotube Designer Tool (\"NATuG\")",
   )[
-    #link("https://404wolf.com/posts/project/DNANanotubes")[blog],
-    #link(
-      "https://wolf-mermelstein-personal-website.s3.us-east-2.amazonaws.com/programOverview_0001_0001_0001.webm",
-    )[dem , #link("https://github.com/NATuG3/NATuG3")[code]
+    DNA nanotechnology academic research project. Developed interactive PY-QT
+    desktop app to streamline geometrically constrained DNA nanotube design.
+    Collaborated w/bionanotechnologist to create important algorithms like
+    determining helix strand switch behavior on junction clicks. Designed export
+    file format. Wrote manual and began working on scholarly paper.
+  ]
 
-      DNA nanotechnology academic research project. Developed interactive PY-QT
-      desktop app to streamline geometrically constrained DNA nanotube design.
-      Collaborated w/bionanotechnologist to create important algorithms like
-      determining helix strand switch behavior on junction clicks. Designed export
-      file format. Wrote manual and began working on scholarly paper. ]
-
-    #project-heading(
-      "Coin Sorting Bot",
-    )[
-      #link("https://404wolf.com/posts/project/coinSortBot")[blog],
-      #link("https://github.com/orgs/Coin-Sort-Bot/repositories")[code]
-
-      Robot to sort coins by date. 3D printed body with mechanism that sends coins
-      down chute to photo them and deflect into canisters. Django/S3 backend for
-      processing.
-    ]
-
-    #project-heading(
-      "Android in the Browser",
-    )[
-      #link("https://404wolf.com/posts/project/androidBrowser")[blog],
-      #link("https://github.com/404Wolf/Browser-Phone")[code]
-
-      Developed toolchain to stream Android to browsers over WebRTC w/Janus Gateway
-      for low-latency video stream. Using Nix for Android packaging, React for
-      frontend, Bun for APIs, and Android development tools. Goal is interactive Andro
-      in browser w/simple React components.
-    ]
-
-    #project-heading(
-      "CWRU Food Finder",
-    )[
-      #link("https://404wolf.com/posts/project/freeCwruFood")[blog], #link("https://free-cwru-food.404wolf.com/")[demo]
-      #link("https://free-cwru-food.404wolf.com/")[code]
-
-      Website using fine-tuned OpenAI model w/Google Cloud Run & MongoDB automated
-      workflow to scrape on-campus events categorize by free food. Includes
-      MUI/React/NextJS frontend. Uses puppeteer to scrape additional event details.
-      2024 1st place university hackathon project. About 50 visitors/month.
-    ]
+  #project-container(
+    (
+      ("blog", "https://404wolf.com/posts/project/freeCwruFood"), ("demo", "https://free-cwru-food.404wolf.com/"), ("code", "https://github.com/404Wolf/free-cwru-food"),
+    ), "CWRU Food Finder",
+  )[
+    Website using fine-tuned OpenAI model w/Google Cloud Run & MongoDB automated
+    workflow to scrape on-campus events and categorize by free food. Includes
+    MUI/React/NextJS frontend. Uses puppeteer to scrape additional event details.
+    2024 1st place university hackathon project. About 50 visitors/month.
   ]
 ]
 
-#custom-title(
+#category-title(
   "Skills",
 )[
-  #skills(
-    )[
-    - *Languages:* Python, TypeScript/JavaScript, Java, Bash, Nix, Lua, Golang, AWK,
-      Scheme/Racket, C/C++, HTML & CSS
-    Markdown & LaTeX, Typst
+  #set list(spacing: 0.6em)
 
-    - *Tools:* Nix & NixOS, Linux, Docker, NextJS & NextAuth, Numpy & Pandas, Prisma,
-      Django, PyQt & PyQtGraph,
-    Asyncio, Unified/Remark & Rehype, Git, S3, AWS, Fusion 360, Janus Gateway &
-    WebRTC, React/React Native, Tailwind, Mui Adobe Illustrator & Photoshop, MS
-    Office, (neo)Vim, Redis, JQ, CLI tooling
-
-    - *Miscellaneous:* Object-oriented, functional, Web development, 110+ WPM Typing,
-      CPR Certified (2022). Fast
-    learner, creative, good communicator.
-  ]
+  - *Languages:* Python, TypeScript/JavaScript, Java, Bash, Nix, Go, Rust, Lua,
+    Scheme/Racket, C/C++, HTML & CSS, Markdown & LaTeX, Typst
+  - *Tools:* Nix & NixOS, Linux, Containers, Modern web frameworks (React, Next,
+    React-router, Tailwind, Prisma/Drizzle, remark/rehype, etc), Modern python
+    frameworks (numpy, pandas, django, PyQt/PyQtGraph, etc), Modern database systems
+    (Postgres, Clickhouse, Redis/keyval), General devtools (Git, github workflows,
+    gnu, etc), AWS (s3, ec2, etc), Janus Gateway & WebRTC, (neo)Vim wizard
 ]
 
 #align(
