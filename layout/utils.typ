@@ -55,9 +55,10 @@
   grid(
     columns: (70%, 30%), [*#school* \ #meta], align(right)[*#location* \ #start-date - #end-date],
   )
-  v(-1.9em)
+  v(-0.9em)
   set par(leading: 0.4em)
   set list(indent: 0.3em)
   body
   v(-0.5em)
 }
+#show list: set list(marker: [•], tight: true, spacing: 0.1em)
