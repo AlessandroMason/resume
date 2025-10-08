@@ -3,7 +3,7 @@
 #let name = "Alessandro Mason"
 #let phone = link("tel:+12162589844")[Phone]
 #let email = link("mailto:axm2022@case.edu")[Email]
-#let github = link("https://github.com/alessandro-mason")[GitHub]
+#let github = link("https://github.com/AlessandroMason")[GitHub]
 #let linkedin = link("https://linkedin.com/in/alessandro-mason-117417260")[LinkedIn]
 #let personal-site = link("https://8080a.com")[Portfolio]
 #let author-name = "Alessandro Mason"
