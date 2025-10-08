@@ -46,7 +46,7 @@
   "Education",
 )[
   #school-container(
-    "Case Western Reserve University", "Cleveland, OH", "B.E. Computer Engineering (Junior), 4.0 GPA", "September, 2023", "Ex. May 2027",
+    "Case Western Reserve University", "Cleveland, OH", "B.S. Computer Engineering, M.S Computer Science, 4.0 GPA", "September, 2023", "Ex. May 2027",
   )[
     - *Relevant courses:* Intro to Machine Learning, Software Engineering, Computer Security, Computer Architecture, Algorithms, FPGAs, VLSI/CAD, System Design
     - *Honors:* Dean's High Honors List; averaged 21+ credits/semester
@@ -144,8 +144,9 @@
 )[
   #awards-container(
     (
-       ([#link("https://grandma-s-wisdom.web.app")[\Duolingo App Mock-up] — Rebuilt Duolingo-style app in 48h; 512 upvotes in the r/Duolingo subreddit], "2025"),
+       
        ([CWRU Hackathon Winner — 8th place out of 35 projects. Created a geo-located event scheduler app], "2025"),
+       ([#link("https://grandma-s-wisdom.web.app")[\Duolingo App Mock-up] — Rebuilt Duolingo-style app in 48h; 512 upvotes in the r/Duolingo subreddit], "2024"),
        ([\$2K Python Automation — Automated pipeline; 2,000+ videos, 90K+ views], "2019"),
       ([Sports Achievements — 3rd Place, Washington DC Regatta (2024); Marathon Finisher (Freiburg, Padova 2022–2025); Regional Track & Field Champion, 2000m in 6:14 (2018)], ""),
     ),
