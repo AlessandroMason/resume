@@ -48,7 +48,7 @@
     "Case Western Reserve University", "Cleveland, OH", "B.E. Computer Engineering (Junior), 4.0 GPA", "September, 2023", "Ex. May 2027",
   )[
     - *Relevant courses:* Logic Design & Computer Org, Digital Logic Lab, Digital Systems Design, Computer Design – FPGAs, Computer Architecture, Embedded Systems, VLSI/CAD, Data Structures, Algorithms, Machine Learning, Software Engineering, Computer Security
-    - *Honors:* Dean's High Honors List; averaged 21+ credits/semester
+    - *Honors:* Dean's High Honors List; averaged 21+ credits/semester ahah
   ]
 ]
 
