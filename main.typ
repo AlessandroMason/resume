@@ -55,25 +55,7 @@
 
 
 
-#category-title(
-  "Entrepreneurship",
-)[
-   #job-container(
-    "CEO & CFO", "Kayros AI", "AI-powered journaling platform", "July 2022", "Present", "Cleveland, OH", links: [#link("https://k4ros.com/kairos_journaling.html")[Website] /* | #link("https://youtu.be/IltM1Zu2Vi4")['22 Hardware] | #link("tel:+12164807520")[+1 (216) 480-7520] */]
-  )[
-    - Created a next-token human prediction model, achieving 79% accuracy by leveraging high-quality data.
-    - Developed and Mantained a 10,000+ line journaling interface serving 255 daily users before AI vibe coding 
-    - Prototyped a 3D ring with BLE electronics and custom firmware; Lead the development of custom PCB.
 
-  ]
-   #job-container(
-    "CEO & CFO", "Kayros Attendance", "IoT attendance tracking system", "June 2024", "June 2025", "Cleveland, OH", links: [/* #link("https://www.linkedin.com/company/kairos-attendance/")[LinkedIn] | #link("https://youtu.be/5qTS-ZBg_Co")[Demo] | */ #link("https://k4ros.com")[Website]]
-  )[
-    - Managed a team of 6 supporting 10 university professors and 800+ weekly users, processing 36,757 records. 
-    - Designed, built, and manufactured 11 IoT portable scanners. Independently developing a 15k+ line codebase. 
-    - Presented 9 pitches to audiences of 400+, securing \$7,000+ in non-dilutive grants.
-  ]
-]
 
 #category-title(
   "Research ",
@@ -121,6 +103,26 @@
     "POS Technical Support", "Point-of-sale maintenance", "", "September 2023", "Present", "Cleveland, OH",
   )[
     - Maintained 7 campus POS locations (5,000+ daily users) 12–14 hrs/week, ensuring 99.9% uptime.
+  ]
+]
+
+#category-title(
+  "Entrepreneurship",
+)[
+   #job-container(
+    "CEO & CFO", "Kayros AI", "AI-powered journaling platform", "July 2022", "Present", "Cleveland, OH", links: [#link("https://k4ros.com/kairos_journaling.html")[Website] /* | #link("https://youtu.be/IltM1Zu2Vi4")['22 Hardware] | #link("tel:+12164807520")[+1 (216) 480-7520] */]
+  )[
+    - Created a next-token human prediction model, achieving 79% accuracy by leveraging high-quality data.
+    - Developed and Mantained a 10,000+ line journaling interface serving 255 daily users before AI vibe coding 
+    - Prototyped a 3D ring with BLE electronics and custom firmware; Lead the development of custom PCB.
+
+  ]
+   #job-container(
+    "CEO & CFO", "Kayros Attendance", "IoT attendance tracking system", "June 2024", "June 2025", "Cleveland, OH", links: [/* #link("https://www.linkedin.com/company/kairos-attendance/")[LinkedIn] | #link("https://youtu.be/5qTS-ZBg_Co")[Demo] | */ #link("https://k4ros.com")[Website]]
+  )[
+    - Managed a team of 6 supporting 10 university professors and 800+ weekly users, processing 36,757 records. 
+    - Designed, built, and manufactured 11 IoT portable scanners. Independently developing a 15k+ line codebase. 
+    - Presented 9 pitches to audiences of 400+, securing \$7,000+ in non-dilutive grants.
   ]
 ]
 #category-title(
