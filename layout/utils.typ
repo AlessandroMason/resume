@@ -19,16 +19,23 @@
   ]
 }
 
-#let job-container(role, company, description, start-date, end-date, location, body) = {
+#let job-container(role, company, description, start-date, end-date, location, links: none, body) = {
   grid(
-    columns: (1fr, auto), grid(
-      rows: 2, row-gutter: 0.35em, [*#role*], [#company #h(0.5em) #box(description)],
-    ), align(right)[*#start-date – #end-date* \ #location],
+    columns: (1fr, auto), 
+    grid(
+      rows: 2, 
+      row-gutter: 0.35em, 
+      [*#role* #links], 
+      [#company #h(0.5em) #box(description)],
+    ), 
+    align(right)[*#start-date – #end-date* \ #location],
   )
   v(-0.8em)
+
   body
   v(-0.4em)
 }
+
 
 #let project-container(links, title, body) = {
   text(size: 1em)[*#title*]
